@@ -13,6 +13,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 wk.add({
   { "<leader>e", group = "Neotree file explorer" }, 
   { "<leader>w", group = "Window split options" }, 
+  { "<leader>l", group = "Text line options" }, 
   })
 
 -- Neotree config
@@ -68,8 +69,10 @@ vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
 vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts) --  go to next tab
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
 
--- Toggle line wrapping
-vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
+-- Toggle line options
+vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', {desc = 'Toggle LineWrap'}, opts)
+vim.keymap.set('n', '<leader>ln', '<cmd>set number!<CR>', {desc = 'Toggle LineNumber'}, opts)
+vim.keymap.set('n', '<leader>lr', '<cmd>set relativenumber!<CR>', {desc = 'Toggle RelativeLineNumber'}, opts)
 
 -- Move text up and down
 vim.keymap.set('v', '<A-j>', ':m .+1<CR>==', opts)
